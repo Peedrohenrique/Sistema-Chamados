@@ -1,111 +1,182 @@
-.container-center {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #121212;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
 }
 
-.login {
-  background: #eaeaec;
-  width: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  animation: slide 2.5s;
+body * {
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
-.login-area {
-  display: flex;
-  justify-content: center;
-  background-color: #181c2e;
-  width: 100%;
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-area img {
-  padding: 20px;
-  width: 170px;
-  height: 130px;
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-form {
-  margin-top: 1.5em;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
+.left-login  h1 {
+    font-size: 6vw;
+    color: #77ffc0;
+    
 }
 
-form h1 {
-  text-align: center;
-  margin-bottom: 0.5em;
-  color: #181c2e;
+.left-login-image {
+    width: 30vw;
 }
 
-.login input {
-  margin-bottom: 15px;
-  height: 35px;
-  border: 0;
-  border-radius: 7px;
-  padding: 10px;
-  font-size: 15px;
-  background-color: #fff;
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-form button {
-  height: 35px;
-  border: 0;
-  border-radius: 7px;
-  background-color: #181c2e;
-  color: #fff;
-  font-size: 1.3em;
+.card-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+    animation: slide 3.0s;
 }
 
-.login a {
-  margin: 1.5em 0;
-  color: rgba(24, 165, 207, 0.637);
-  cursor: pointer;
+.card-login h1 {
+    color: #00ff88;
+    font-weight: 800;
+    margin: 0;
 }
 
-.login p {
-  margin: 1.5em 0;
-  color: rgba(2, 2, 2, 0.637);
+.textfield {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 10px 0px;
 }
 
-.teste {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.textfield input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
 }
+
+.textfield label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #f0ffffde;
+}
+
+p a {
+    color: #00ff88;
+}
+
+.textfield  input::placeholder {
+    color: #959b9b94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+@media only screen and (max-width: 950px){
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .main-login {
+        flex-direction:column;
+    }
+    .left-login {
+     width: 100%;
+     height: auto;   
+    }
+    .left-login > h1 {
+        display: none;
+    }
+    .rigth-login {
+     width: 100%;
+     height: auto;   
+    }
+    .left-login-image {
+        width: 50vw;
+    }
+    .card-login {
+        width: 90%;
+    }
+}
+
 /* ------- Parte de efeitos do css --------  */
 
 @keyframes flipTitle {
-  from {
-    transform: rotateX(90deg);
+    from {
+      transform: rotateX(90deg);
+    }
+  
+    to {
+      transform: rotateX(0deg);
+    }
   }
-
-  to {
-    transform: rotateX(0deg);
+  
+  @keyframes go-back {
+    0% {
+      transform: translateX(635px);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
   }
-}
-
-@keyframes go-back {
-  0% {
-    transform: translateX(500px);
+  
+  @keyframes slide {
+    from {
+      opacity: -5;
+    }
+  
+    to {
+      opacity: 1;
+    }
   }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
